@@ -21,7 +21,6 @@ public class MainFragment extends IBaseFragment {
 
     @Override
     protected void initView(View parentView) {
-
     }
 
     public static IBaseFragment getInstance() {

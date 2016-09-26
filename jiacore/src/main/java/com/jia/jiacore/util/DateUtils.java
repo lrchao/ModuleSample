@@ -8,14 +8,13 @@ import java.util.Locale;
  * Description: 处理时间，日期等工具类
  * "yyyy-MM-dd HH:mm:ss"
  *
- * @author liuranchao
+ * @author lrc19860926@gmail.com
  * @date 16/3/17 上午10:54
  */
 public final class DateUtils {
 
-    public static final String SD_YYYY_MM_DD_FORMATTER = "yyyy-MM-dd";
-    public static final String SD_YYYY_MM_DD_HH_MM_SS = "yyyy-MM-dd-HH-mm-ss";
-    public static final String SD_YYYY_MM_DD_HH_MM_SS_LOG = "yyyy-MM-dd HH:mm:ss";
+    public static final String SD_YYYY_MM_DD_SIGN = "yyyy-MM-dd";
+    public static final String SD_YYYY_MM_DD_HH_MM_SS_SIGN = "yyyy-MM-dd HH:mm:ss";
 
     private DateUtils() {
     }
@@ -26,21 +25,16 @@ public final class DateUtils {
      * @param time time
      * @return String
      */
-    public static String getDataYearMonthDayFormat(long time) {
-        return format(SD_YYYY_MM_DD_FORMATTER, new Date(time));
+    public static String getYMDSign(long time) {
+        return format(SD_YYYY_MM_DD_SIGN, new Date(time));
     }
 
     /**
      * 获取文件名上的时间
      */
-    public static String getFileNameDate(long time) {
-        return format(SD_YYYY_MM_DD_HH_MM_SS, new Date(time));
+    public static String getYMDHMS(long time) {
+        return format(SD_YYYY_MM_DD_HH_MM_SS_SIGN, new Date(time));
     }
-
-    public static String getLogDate(long time) {
-        return format(SD_YYYY_MM_DD_HH_MM_SS_LOG, new Date(time));
-    }
-
 
     /**
      * 格式化时间使用

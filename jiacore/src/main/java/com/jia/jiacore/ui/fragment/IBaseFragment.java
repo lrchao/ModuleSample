@@ -1,6 +1,10 @@
 package com.jia.jiacore.ui.fragment;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.CallSuper;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.jia.jiacore.util.LogUtils;
+
+import java.lang.ref.WeakReference;
 
 /**
  * Description: Fragment基类
@@ -31,9 +37,47 @@ public abstract class IBaseFragment extends Fragment {
     private FragmentManager mFragmentManager;
 
     /**
+     * Handler
+     */
+    protected MainHandler mMainHandler;
+
+    /**
      * Fragment的根view
      */
     protected View mMainView;
+
+    //====================================
+    // 子类调用
+    //====================================
+
+    /**
+     * Handler的回调方法
+     *
+     * @param msg Message
+     */
+    protected final void handleMainMessage(Message msg) {
+    }
+
+    /**
+     * 关闭Activity
+     */
+    protected final void finishActivity() {
+        if (getActivity() != null) {
+            getActivity().finish();
+        }
+    }
+
+    /**
+     * *
+     * 调用Activity的setResult()
+     *
+     * @param intent 回传数据的Intent
+     */
+    protected final void setResultOK(Intent intent) {
+        if (getActivity() != null) {
+            getActivity().setResult(Activity.RESULT_OK, intent);
+        }
+    }
 
     //====================================
     // 子类继承
@@ -85,7 +129,7 @@ public abstract class IBaseFragment extends Fragment {
             }
         });
 
-        // mMainHandler = new MainHandler(new WeakReference<>(this));
+        mMainHandler = new MainHandler(new WeakReference<>(this));
     }
 
     @CallSuper
@@ -108,4 +152,33 @@ public abstract class IBaseFragment extends Fragment {
         return mMainView;
     }
 
+    /**
+     * 全局静态的handler
+     */
+    protected static final class MainHandler extends Handler {
+
+        private final WeakReference<IBaseFragment> mOuterContext;
+
+        public MainHandler(WeakReference<IBaseFragment> context) {
+            this.mOuterContext = context;
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            IBaseFragment fragment = mOuterContext.get();
+            if (fragment != null) {
+                fragment.handleMainMessage(msg);
+            }
+
+        }
+
+        protected void onDestroy() {
+            if (mOuterContext != null) {
+                IBaseFragment fragment = mOuterContext.get();
+                fragment = null;
+                mOuterContext.clear();
+            }
+        }
+    }
 }

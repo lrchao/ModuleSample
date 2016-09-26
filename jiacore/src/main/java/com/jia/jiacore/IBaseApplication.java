@@ -2,6 +2,8 @@ package com.jia.jiacore;
 
 import android.app.Application;
 
+import com.jia.jiacore.util.LogUtils;
+
 /**
  * Description: Application的基类
  *
@@ -20,8 +22,11 @@ public abstract class IBaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        sInstance = this;
 
         CoreBuildConfig.DEBUG = isDEBUG();
+
+        LogUtils.init();
         init();
     }
 

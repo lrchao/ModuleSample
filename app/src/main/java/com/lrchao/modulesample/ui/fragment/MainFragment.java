@@ -8,4 +8,8 @@ package com.lrchao.modulesample.ui.fragment;
  */
 
 public class MainFragment {
+
+//    public static Fragment getInstance() {
+//        return null;
+//    }
 }

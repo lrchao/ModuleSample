@@ -9,7 +9,13 @@ package com.jia.jiacore;
 
 public class CoreBuildConfig {
 
+    /**
+     * 是否为DEBUG
+     */
     public static boolean DEBUG;
+
+
+
 
 
 }

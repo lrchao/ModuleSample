@@ -2,7 +2,7 @@ package com.lrchao.modulesample.ui.activity;
 
 import android.view.View;
 
-import com.jia.jiacore.ui.IBaseActivity;
+import com.jia.jiacore.ui.activity.IBaseActivity;
 import com.lrchao.modulesample.R;
 
 public class MainActivity extends IBaseActivity implements View.OnClickListener {
@@ -14,6 +14,7 @@ public class MainActivity extends IBaseActivity implements View.OnClickListener 
 
     @Override
     protected void initView() {
+        //showFragment(MainFragment.getInstance());
         findViewById(R.id.btn_page_network).setOnClickListener(this);
     }
 

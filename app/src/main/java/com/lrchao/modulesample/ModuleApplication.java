@@ -1,7 +1,5 @@
 package com.lrchao.modulesample;
 
-import android.util.Log;
-
 import com.jia.jiacore.IBaseApplication;
 
 /**
@@ -15,8 +13,6 @@ public class ModuleApplication extends IBaseApplication {
 
     @Override
     protected void init() {
-        Log.e("bbb", "bbb==" + BuildConfig.DEBUG);
-        //setDebug(com.jia.jiacore.BuildConfig);
     }
 
     @Override

@@ -1,6 +1,6 @@
 package com.lrchao.modulesample.ui.activity;
 
-import com.jia.jiacore.ui.IBaseActivity;
+import com.jia.jiacore.ui.activity.IBaseActivity;
 import com.lrchao.modulesample.R;
 
 /**

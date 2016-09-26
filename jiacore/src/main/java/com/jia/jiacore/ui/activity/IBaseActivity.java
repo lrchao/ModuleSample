@@ -1,4 +1,4 @@
-package com.jia.jiacore.ui;
+package com.jia.jiacore.ui.activity;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -13,6 +13,7 @@ import android.view.WindowManager;
 
 import com.jia.jiacore.CoreBuildConfig;
 import com.jia.jiacore.R;
+import com.jia.jiacore.util.LogUtils;
 import com.jia.jiacore.util.Utils;
 
 import java.util.List;
@@ -204,6 +205,8 @@ public abstract class IBaseActivity extends SwipeBackActivity {
                 onDelayLoad();
             }
         });
+
+        LogUtils.d(mTag, "onCreate()");
     }
 
     @CallSuper

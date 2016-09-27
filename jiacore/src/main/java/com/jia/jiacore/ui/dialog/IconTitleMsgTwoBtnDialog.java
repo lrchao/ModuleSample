@@ -8,9 +8,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.jia.lib.R;
-import com.jia.lib.constant.IBundleKey;
-import com.jia.lib.ui.dialog.listener.DialogTwoBtnClickListener;
+import com.jia.jiacore.R;
+import com.jia.jiacore.constant.IBaseBundleKey;
+import com.jia.jiacore.ui.dialog.listener.DialogTwoBtnClickListener;
 
 /**
  * Description:
@@ -19,10 +19,10 @@ import com.jia.lib.ui.dialog.listener.DialogTwoBtnClickListener;
  * 3.Title
  * 4.Message
  *
- * @author liuranchao
+ * @author lrc19860926@gmail.com
  * @date 16/5/18 上午9:24
  */
-public class IconTitleMsgTwoBtnDialog extends IDialogFragment implements View.OnClickListener {
+public class IconTitleMsgTwoBtnDialog extends IBaseDialogFragment implements View.OnClickListener {
 
     private CharSequence mTitle;
 
@@ -43,11 +43,11 @@ public class IconTitleMsgTwoBtnDialog extends IDialogFragment implements View.On
                                                        CharSequence rightBtnText) {
         IconTitleMsgTwoBtnDialog f = new IconTitleMsgTwoBtnDialog();
         Bundle args = new Bundle();
-        args.putCharSequence(IBundleKey.INTENT_EXTRA_DIALOG_TITLE, title);
-        args.putCharSequence(IBundleKey.INTENT_EXTRA_DIALOG_MESSAGE, msg);
-        args.putInt(IBundleKey.INTENT_EXTRA_DIALOG_ICON, iconResId);
-        args.putCharSequence(IBundleKey.INTENT_EXTRA_DIALOG_LEFT_BTN_TEXT, leftBtnText);
-        args.putCharSequence(IBundleKey.INTENT_EXTRA_DIALOG_RIGHT_BTN_TEXT, rightBtnText);
+        args.putCharSequence(IBaseBundleKey.INTENT_EXTRA_DIALOG_TITLE, title);
+        args.putCharSequence(IBaseBundleKey.INTENT_EXTRA_DIALOG_MESSAGE, msg);
+        args.putInt(IBaseBundleKey.INTENT_EXTRA_DIALOG_ICON, iconResId);
+        args.putCharSequence(IBaseBundleKey.INTENT_EXTRA_DIALOG_LEFT_BTN_TEXT, leftBtnText);
+        args.putCharSequence(IBaseBundleKey.INTENT_EXTRA_DIALOG_RIGHT_BTN_TEXT, rightBtnText);
         f.setArguments(args);
         return f;
     }
@@ -57,12 +57,12 @@ public class IconTitleMsgTwoBtnDialog extends IDialogFragment implements View.On
     }
 
     @Override
-    protected void initArgumentsData(Bundle bundle) {
-        mTitle = bundle.getCharSequence(IBundleKey.INTENT_EXTRA_DIALOG_TITLE);
-        mMessage = bundle.getCharSequence(IBundleKey.INTENT_EXTRA_DIALOG_MESSAGE);
-        mIconResId = bundle.getInt(IBundleKey.INTENT_EXTRA_DIALOG_ICON);
-        mLeftBtnText = bundle.getCharSequence(IBundleKey.INTENT_EXTRA_DIALOG_LEFT_BTN_TEXT);
-        mRightBtnText = bundle.getCharSequence(IBundleKey.INTENT_EXTRA_DIALOG_RIGHT_BTN_TEXT);
+    protected void initData(Bundle bundle) {
+        mTitle = bundle.getCharSequence(IBaseBundleKey.INTENT_EXTRA_DIALOG_TITLE);
+        mMessage = bundle.getCharSequence(IBaseBundleKey.INTENT_EXTRA_DIALOG_MESSAGE);
+        mIconResId = bundle.getInt(IBaseBundleKey.INTENT_EXTRA_DIALOG_ICON);
+        mLeftBtnText = bundle.getCharSequence(IBaseBundleKey.INTENT_EXTRA_DIALOG_LEFT_BTN_TEXT);
+        mRightBtnText = bundle.getCharSequence(IBaseBundleKey.INTENT_EXTRA_DIALOG_RIGHT_BTN_TEXT);
     }
 
     @Override

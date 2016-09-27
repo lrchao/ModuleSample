@@ -5,6 +5,7 @@ import android.view.View;
 import com.jia.jiacore.manager.shared_preference.SharedPreferenceItem;
 import com.jia.jiacore.ui.fragment.IBaseFragment;
 import com.lrchao.modulesample.R;
+import com.lrchao.modulesample.database.table.HttpCacheTable;
 
 /**
  * Description: TODO
@@ -26,6 +27,8 @@ public class MainFragment extends IBaseFragment implements View.OnClickListener 
     @Override
     protected void initView(View parentView) {
         parentView.findViewById(R.id.btn_page_network).setOnClickListener(this);
+
+        HttpCacheTable.insert("aaa", "bbb");
 
     }
 

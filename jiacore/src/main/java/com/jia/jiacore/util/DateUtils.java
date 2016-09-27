@@ -15,6 +15,7 @@ public final class DateUtils {
 
     public static final String SD_YYYY_MM_DD_SIGN = "yyyy-MM-dd";
     public static final String SD_YYYY_MM_DD_HH_MM_SS_SIGN = "yyyy-MM-dd HH:mm:ss";
+    public static final String SD_LOG = "yyyy-MM-dd-HH-mm-ss";
 
     private DateUtils() {
     }
@@ -32,8 +33,8 @@ public final class DateUtils {
     /**
      * 获取文件名上的时间
      */
-    public static String getYMDHMS(long time) {
-        return format(SD_YYYY_MM_DD_HH_MM_SS_SIGN, new Date(time));
+    public static String getLog(long time) {
+        return format(SD_LOG, new Date(time));
     }
 
     /**

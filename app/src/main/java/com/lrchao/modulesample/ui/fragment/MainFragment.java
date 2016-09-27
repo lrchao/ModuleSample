@@ -3,8 +3,6 @@ package com.lrchao.modulesample.ui.fragment;
 import android.view.View;
 
 import com.jia.jiacore.ui.fragment.IBaseFragment;
-import com.jia.jiacore.util.DeviceUtils;
-import com.jia.jiacore.util.LogUtils;
 import com.lrchao.modulesample.R;
 
 /**
@@ -14,7 +12,7 @@ import com.lrchao.modulesample.R;
  * @date 16/9/26 下午1:57
  */
 
-public class MainFragment extends IBaseFragment {
+public class MainFragment extends IBaseFragment implements View.OnClickListener {
 
     @Override
     protected int getLayoutViewId() {
@@ -23,10 +21,7 @@ public class MainFragment extends IBaseFragment {
 
     @Override
     protected void initView(View parentView) {
-
-        LogUtils.e("DeviceUtils.getScreenWH()==" + DeviceUtils.getScreenWH());
-        LogUtils.e("DeviceUtils.getSerialNumber()==" + DeviceUtils.getSerialNumber());
-        LogUtils.e("DeviceUtils.getAndroidId(getContext())==" + DeviceUtils.getAndroidId(getContext()));
+        parentView.findViewById(R.id.btn_page_network).setOnClickListener(this);
     }
 
     public static IBaseFragment getInstance() {
@@ -34,4 +29,13 @@ public class MainFragment extends IBaseFragment {
     }
 
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_page_network:
+                break;
+            default:
+                break;
+        }
+    }
 }

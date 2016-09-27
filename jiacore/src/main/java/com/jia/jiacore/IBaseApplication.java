@@ -2,6 +2,8 @@ package com.jia.jiacore;
 
 import android.app.Application;
 
+import com.jia.jiacore.constant.IBaseConstants;
+import com.jia.jiacore.manager.crash.CrashHandler;
 import com.jia.jiacore.util.LogUtils;
 
 /**
@@ -25,8 +27,12 @@ public abstract class IBaseApplication extends Application {
         sInstance = this;
 
         CoreBuildConfig.DEBUG = isDEBUG();
+        IBaseConstants.DIR_NAME_PLATFORM = getDirNamePlatform();
+        IBaseConstants.DIR_NAME_APP = getDirNameApp();
 
         LogUtils.init();
+        CrashHandler.getInstance().init();
+
         init();
     }
 
@@ -35,5 +41,20 @@ public abstract class IBaseApplication extends Application {
      */
     protected abstract void init();
 
+    /**
+     * 是否为Debug模式
+     */
     protected abstract boolean isDEBUG();
+
+    /**
+     * 博若森 或者 装修平台 等
+     */
+    protected abstract String getDirNamePlatform();
+
+    /**
+     * 具体app的缓存名称
+     */
+    protected abstract String getDirNameApp();
+
+
 }

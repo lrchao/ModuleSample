@@ -1,6 +1,7 @@
 package com.lrchao.modulesample;
 
 import com.jia.jiacore.IBaseApplication;
+import com.lrchao.modulesample.constant.Constants;
 
 /**
  * Description: TODO
@@ -18,5 +19,15 @@ public class ModuleApplication extends IBaseApplication {
     @Override
     protected boolean isDEBUG() {
         return BuildConfig.DEBUG;
+    }
+
+    @Override
+    protected String getDirNamePlatform() {
+        return Constants.DIR_NAME_ZXERP;
+    }
+
+    @Override
+    protected String getDirNameApp() {
+        return Constants.DIR_NAME_USER;
     }
 }

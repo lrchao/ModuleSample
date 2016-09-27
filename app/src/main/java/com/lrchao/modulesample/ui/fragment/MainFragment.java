@@ -2,6 +2,7 @@ package com.lrchao.modulesample.ui.fragment;
 
 import android.view.View;
 
+import com.jia.jiacore.manager.shared_preference.SharedPreferenceItem;
 import com.jia.jiacore.ui.fragment.IBaseFragment;
 import com.lrchao.modulesample.R;
 
@@ -14,6 +15,9 @@ import com.lrchao.modulesample.R;
 
 public class MainFragment extends IBaseFragment implements View.OnClickListener {
 
+    public static final SharedPreferenceItem PREF_HOME_REQUIREMENT_FINISH_FLAG =
+            new SharedPreferenceItem("pref.home_requirement.finish.flag", String.class);
+
     @Override
     protected int getLayoutViewId() {
         return R.layout.fragment_main;
@@ -22,6 +26,7 @@ public class MainFragment extends IBaseFragment implements View.OnClickListener 
     @Override
     protected void initView(View parentView) {
         parentView.findViewById(R.id.btn_page_network).setOnClickListener(this);
+
     }
 
     public static IBaseFragment getInstance() {

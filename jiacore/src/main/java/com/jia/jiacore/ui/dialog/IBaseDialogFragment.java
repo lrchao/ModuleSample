@@ -1,5 +1,6 @@
 package com.jia.jiacore.ui.dialog;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
 import android.support.annotation.Nullable;
@@ -101,7 +102,15 @@ public abstract class IBaseDialogFragment extends DialogFragment {
      */
     public void dismissDialog() {
         try {
-            dismiss();
+
+            if (getActivity() != null && getActivity() instanceof IBaseDialogActivity) {
+                if (mOnDialogDismissListener != null) {
+                    mOnDialogDismissListener.onDialogDismissListener();
+                }
+            } else {
+                dismiss();
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -124,7 +133,7 @@ public abstract class IBaseDialogFragment extends DialogFragment {
     @Nullable
     @Override
     public final View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
+                                   @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(getLayoutViewId(), null);
 
@@ -155,6 +164,50 @@ public abstract class IBaseDialogFragment extends DialogFragment {
             }
         }
         return view;
+    }
+
+    @CallSuper
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @CallSuper
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+
+    @CallSuper
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+
+    @CallSuper
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+    }
+
+    @CallSuper
+    @Override
+    public void onDismiss(DialogInterface dialog) {
+        super.onDismiss(dialog);
+        if (mOnDialogDismissListener != null) {
+            mOnDialogDismissListener.onDialogDismissListener();
+        }
+    }
+
+    /**
+     * Dialog cancel时调用
+     *
+     * @param dialog DialogInterface
+     */
+    @CallSuper
+    @Override
+    public void onCancel(DialogInterface dialog) {
+        super.onCancel(dialog);
     }
 
 }

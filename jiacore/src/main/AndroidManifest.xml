@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         >
 
-        <activity
-            android:name=".ui.dialog.IBaseDialogActivity"
-            android:theme="@style/DialogTransparent"/>
     </application>
 
 </manifest>

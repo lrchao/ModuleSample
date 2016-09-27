@@ -1,11 +1,12 @@
 package com.lrchao.modulesample.ui.fragment;
 
+import android.content.Intent;
 import android.view.View;
 
 import com.jia.jiacore.manager.shared_preference.SharedPreferenceItem;
-import com.jia.jiacore.ui.dialog.IconTitleOneBtnDialog;
 import com.jia.jiacore.ui.fragment.IBaseFragment;
 import com.lrchao.modulesample.R;
+import com.lrchao.modulesample.ui.CustomerDialogActivity;
 
 /**
  * Description: TODO
@@ -38,7 +39,7 @@ public class MainFragment extends IBaseFragment implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_page_network:
-                showDialog(IconTitleOneBtnDialog.newInstance("title"));
+                startActivity(new Intent(getActivity(), CustomerDialogActivity.class));
                 break;
             default:
                 break;

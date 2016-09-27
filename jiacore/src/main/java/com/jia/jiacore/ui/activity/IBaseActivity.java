@@ -125,11 +125,6 @@ public abstract class IBaseActivity extends SwipeBackActivity {
      */
     protected abstract int getLayoutViewId();
 
-
-    //====================
-    // 子类可重写的方法
-    //====================
-
     /**
      * 初始化数据
      *
@@ -176,9 +171,11 @@ public abstract class IBaseActivity extends SwipeBackActivity {
         if (CoreBuildConfig.DEBUG) {
             Utils.enableStrictMode(this.getClass());
         }
+
         super.onCreate(savedInstanceState);
         // 设置页面方向
         setRequestedOrientation(getScreenOrientation());
+
         setContentView(getLayoutViewId());
         mFragmentManager = getSupportFragmentManager();
         initData(getIntent());

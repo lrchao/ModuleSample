@@ -6,7 +6,7 @@ import com.jia.jiacore.ui.dialog.listener.OnDialogDismissListener;
 
 /**
  * Description: 显示DialogFragment的Activity
- *
+ * 1. 在Androidmanifest.xml <activity>中android:theme="@style/DialogTransparent"
  * @author lrc19860926@gmail.com
  * @date 16/9/27 下午3:02
  */

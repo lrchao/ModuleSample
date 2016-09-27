@@ -1,0 +1,8 @@
+<resources>
+
+    <!-- Dialog -->
+    <dimen name="dialog_title">18sp</dimen>
+    <dimen name="dialog_message">16sp</dimen>
+    <dimen name="dialog_btn">16sp</dimen>
+
+</resources>

@@ -3,4 +3,13 @@
 
     <!-- Fragment -->
     <item name="fragment_container" type="id"/>
+
+    <!-- Dialog message-->
+    <item name="iv_dialog_icon" type="id"/>
+    <item name="tv_dialog_title" type="id"/>
+    <item name="tv_dialog_message" type="id"/>
+    <item name="btn_dialog_left" type="id"/>
+    <item name="btn_dialog_right" type="id"/>
+    <item name="btn_dialog_middle" type="id"/>
+    <item name="layout_dialog_title" type="id"/>
 </resources>

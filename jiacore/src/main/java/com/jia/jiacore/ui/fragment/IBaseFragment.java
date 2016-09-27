@@ -9,10 +9,12 @@ import android.support.annotation.CallSuper;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.jia.jiacore.ui.dialog.IBaseDialogFragment;
 import com.jia.jiacore.util.LogUtils;
 
 import java.lang.ref.WeakReference;
@@ -78,6 +80,37 @@ public abstract class IBaseFragment extends Fragment {
             getActivity().setResult(Activity.RESULT_OK, intent);
         }
     }
+
+    /**
+     * 显示Dialog
+     *
+     * @param dialogFragment IBaseDialogFragment
+     */
+    public final void showDialog(IBaseDialogFragment dialogFragment) {
+
+        try {
+            String tag = dialogFragment.getClass().getSimpleName();
+
+            FragmentTransaction ft = mFragmentManager.beginTransaction();
+            Fragment prev = getFragmentManager().findFragmentByTag(tag);
+            if (prev != null) {
+                ft.remove(prev);
+            }
+            ft.addToBackStack(null);
+
+            // 检查 是否isAdded()
+            if (prev == null || (
+                    !prev.isAdded() &&
+                            !prev.isVisible() &&
+                            !prev.isRemoving())) {
+                dialogFragment.show(ft, tag);
+            }
+
+        } catch (IllegalStateException e) {
+            LogUtils.wtf(e);
+        }
+    }
+
 
     //====================================
     // 子类继承

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 透明 -->
+    <color name="transparent">#00000000</color>
+
+    <!-- Dialog -->
+    <color name="dialog_bg">#FFFFFF</color>
+    <color name="dialog_title_text">#333333</color>
+    <color name="dialog_message_text">#999999</color>
+
+    <color name="dialog_btn_cancel_pressed_bg">#999999</color>  <!-- 取消按钮 按下的背景色-->
+    <color name="dialog_btn_cancel_normal_bg">#FFFFFF</color>   <!-- 取消按钮 正常的背景色-->
+    <color name="dialog_btn_cancel_border">#F7AB00</color>  <!-- 取消按钮 边框颜色-->
+    <color name="dialog_btn_confirm_pressed_bg">#FD9324</color> <!-- 确认按钮 按下的背景色-->
+    <color name="dialog_btn_confirm_normal_bg">#FFAE00</color> <!-- 确认按钮 正常的背景色-->
+    <color name="dialog_two_btn_cancel_text">#FFAE00</color>  <!-- 两个按钮的dialog的取消按钮文字颜色-->
+    <color name="dialog_two_btn_confirm_text">#FFFFFF</color> <!-- 两个按钮的dialog的确认按钮文字颜色-->
+    <color name="dialog_btn_confirm_bg">#FFFFFF</color> <!-- 确认按钮 背景色-->
+    <color name="dialog_btn_confirm_border">#FFAE00</color> <!-- 确认按钮 边框色-->
+    <color name="dialog_btn_confirm_text">#FFAE00</color> <!-- 确认按钮 文字色-->
+    <!-- 灰色 -->
+
+</resources>

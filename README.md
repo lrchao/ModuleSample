@@ -5,3 +5,4 @@
 - 崩溃时候,写本地日志
 - Dialog基类及常用的Dialog
 - EventBus
+- 图片库采用

@@ -27,6 +27,13 @@ public final class FileUtils {
     //=======================================================
 
     /**
+     * 文件是否存在
+     */
+    public static boolean isExist(File file) {
+        return file != null && file.exists();
+    }
+
+    /**
      * 创建SDCard根目录
      * /qijia
      */

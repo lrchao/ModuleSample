@@ -3,7 +3,7 @@ package com.lrchao.modulesample.ui.fragment;
 import android.view.View;
 
 import com.jia.jiacore.manager.shared_preference.SharedPreferenceItem;
-import com.jia.jiacore.ui.dialog.AutoDismissDialog;
+import com.jia.jiacore.ui.dialog.IconTitleMessageOneBtnDialog;
 import com.jia.jiacore.ui.fragment.IBaseFragment;
 import com.lrchao.modulesample.R;
 
@@ -38,7 +38,7 @@ public class MainFragment extends IBaseFragment implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_page_network:
-                showDialog(AutoDismissDialog.newInstance("dddd"));
+                showDialog(IconTitleMessageOneBtnDialog.newInstance("title", "message", R.drawable.dialog_small_smile));
                 break;
             default:
                 break;

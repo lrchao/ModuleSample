@@ -2,6 +2,7 @@ package com.jia.jiacore.ui.dialog;
 
 import com.jia.jiacore.R;
 import com.jia.jiacore.ui.activity.IBaseActivity;
+import com.jia.jiacore.ui.dialog.listener.OnDialogDismissListener;
 
 /**
  * Description: 显示DialogFragment的Activity
@@ -10,7 +11,7 @@ import com.jia.jiacore.ui.activity.IBaseActivity;
  * @date 16/9/27 下午3:02
  */
 
-public abstract class IBaseDialogActivity extends IBaseActivity {
+public abstract class IBaseDialogActivity extends IBaseActivity implements OnDialogDismissListener {
 
     @Override
     protected int getLayoutViewId() {
@@ -21,6 +22,19 @@ public abstract class IBaseDialogActivity extends IBaseActivity {
 
     @Override
     protected void initView() {
-        showFragment(getDialogFragment());
+
+        IBaseDialogFragment baseDialogFragment = getDialogFragment();
+        if (baseDialogFragment == null) {
+            finish();
+        } else {
+            baseDialogFragment.setOnDialogDismissListener(this);
+            showFragment(baseDialogFragment);
+        }
+
+    }
+
+    @Override
+    public void onDialogDismissListener() {
+        finish();
     }
 }

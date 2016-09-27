@@ -69,7 +69,7 @@ public abstract class IBaseActivity extends SwipeBackActivity {
     protected final void switchContent(Fragment from, Fragment to, Bundle bundle) {
 
         if (to != null) {
-            //TODO
+            //TODO KevinLiu
             //SessionManager.getInstance().setCurrentPageName(to.getClass().getSimpleName());
         }
 

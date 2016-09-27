@@ -3,9 +3,8 @@ package com.lrchao.modulesample.ui.fragment;
 import android.view.View;
 
 import com.jia.jiacore.manager.shared_preference.SharedPreferenceItem;
-import com.jia.jiacore.ui.dialog.TitleOneBtnDialog;
+import com.jia.jiacore.ui.dialog.AutoDismissDialog;
 import com.jia.jiacore.ui.fragment.IBaseFragment;
-import com.jia.jiacore.util.ToastUtils;
 import com.lrchao.modulesample.R;
 
 /**
@@ -39,9 +38,7 @@ public class MainFragment extends IBaseFragment implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_page_network:
-                ToastUtils.show("aaaa");
-
-                showDialog(TitleOneBtnDialog.newInstance("bbb"));
+                showDialog(AutoDismissDialog.newInstance("dddd"));
                 break;
             default:
                 break;

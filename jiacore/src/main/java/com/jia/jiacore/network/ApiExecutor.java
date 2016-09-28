@@ -79,7 +79,7 @@ public final class ApiExecutor {
                     } else {
                         // HTTP 非200异常
                         mResponse.setFailedMessage(ResourceUtils.getString(R.string.network_failed_server));
-                        LogUtils.w(message);
+                        LogUtils.w("code:" + code + " message:" + message);
                     }
 
                 } catch (IOException e) {

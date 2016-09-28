@@ -20,7 +20,7 @@ public interface ServerApi {
     /**
      * 首页
      */
-    @GET("homepage1111/info")
+    @GET("homepage/info")
     Call<JsonModel> homepage();
 
     /**

@@ -1,14 +1,15 @@
 package com.lrchao.modulesample.ui.fragment;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.View;
 
+import com.jia.jiacore.mvp.IBasePresenter;
 import com.jia.jiacore.network.IBaseRequest;
-import com.jia.jiacore.service.ApiService;
 import com.jia.jiacore.ui.fragment.IBaseFragment;
+import com.jia.jiacore.ui.fragment.IBaseMvpFragment;
+import com.jia.jiacore.util.LogUtils;
 import com.lrchao.modulesample.R;
-import com.lrchao.modulesample.network.HomepageRequest;
+import com.lrchao.modulesample.mvp.homepage.HomepageContract;
+import com.lrchao.modulesample.mvp.homepage.HomepagePresenter;
 
 /**
  * Description: 页面加载的Fragment
@@ -17,13 +18,15 @@ import com.lrchao.modulesample.network.HomepageRequest;
  * @date 16/9/26 下午1:56
  */
 
-public class PageNetworkFragment extends IBaseFragment implements View.OnClickListener {
+public class PageNetworkFragment extends IBaseMvpFragment implements
+        View.OnClickListener, HomepageContract.View {
 
+    private HomepagePresenter mHomepagePresenter;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+    protected IBasePresenter createPresenter() {
+        mHomepagePresenter = new HomepagePresenter();
+        return mHomepagePresenter;
     }
 
     @Override
@@ -51,7 +54,9 @@ public class PageNetworkFragment extends IBaseFragment implements View.OnClickLi
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_send_request:
-                getActivity().startService(ApiService.createIntent(new HomepageRequest()));
+
+                mHomepagePresenter.loadPageData();
+
                 break;
             default:
                 break;
@@ -67,4 +72,8 @@ public class PageNetworkFragment extends IBaseFragment implements View.OnClickLi
     }
 
 
+    @Override
+    public void showPageData() {
+        LogUtils.e("showPageData()");
+    }
 }

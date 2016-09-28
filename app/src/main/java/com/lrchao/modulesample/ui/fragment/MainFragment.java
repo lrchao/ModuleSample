@@ -6,7 +6,7 @@ import android.view.View;
 import com.jia.jiacore.manager.shared_preference.SharedPreferenceItem;
 import com.jia.jiacore.ui.fragment.IBaseFragment;
 import com.lrchao.modulesample.R;
-import com.lrchao.modulesample.ui.CustomerDialogActivity;
+import com.lrchao.modulesample.ui.activity.PageNetworkActivity;
 
 /**
  * Description: 主页面
@@ -38,7 +38,7 @@ public class MainFragment extends IBaseFragment implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_page_network:
-                startActivity(new Intent(getActivity(), CustomerDialogActivity.class));
+                startActivity(new Intent(getActivity(), PageNetworkActivity.class));
                 break;
             default:
                 break;

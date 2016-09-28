@@ -114,6 +114,14 @@ public abstract class IBaseFragment extends Fragment {
     //====================================
 
     /**
+     * 初始化数据方法，如果Intent为null时，子类收不到调用
+     *
+     * @param intent Activity传过来的Intent
+     */
+    protected void initData(Intent intent) {
+    }
+
+    /**
      * 扩展的fragment,嵌套fragment使用
      *
      * @param inflater     LayoutInflater
@@ -150,6 +158,11 @@ public abstract class IBaseFragment extends Fragment {
         super.onCreate(savedInstanceState);
         LogUtils.d(mTag, "onCreate()");
         mFragmentManager = getChildFragmentManager();
+
+        if (getActivity() != null) {
+            initData(getActivity().getIntent());
+        }
+
 
         // 用于延迟加载
         getActivity().getWindow().getDecorView().post(new Runnable() {

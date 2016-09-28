@@ -3,7 +3,7 @@ package com.lrchao.modulesample.constant;
 import com.jia.jiacore.constant.IBaseConstants;
 
 /**
- * Description: TODO
+ * Description: 常量类
  *
  * @author lrc19860926@gmail.com
  * @date 16/9/27 上午10:08

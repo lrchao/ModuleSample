@@ -4,7 +4,7 @@ import com.jia.jiacore.IBaseApplication;
 import com.lrchao.modulesample.constant.Constants;
 
 /**
- * Description: TODO
+ * Description: Application
  *
  * @author lrc19860926@gmail.com
  * @date 16/9/26 上午11:34

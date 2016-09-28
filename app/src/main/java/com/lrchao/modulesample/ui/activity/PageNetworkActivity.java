@@ -4,7 +4,7 @@ import com.jia.jiacore.ui.activity.IBaseActivity;
 import com.lrchao.modulesample.R;
 
 /**
- * Description: TODO
+ * Description: 页面数据网络加载的页面
  *
  * @author lrc19860926@gmail.com
  * @date 16/9/26 上午11:29

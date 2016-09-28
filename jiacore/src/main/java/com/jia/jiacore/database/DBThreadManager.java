@@ -13,9 +13,8 @@ import java.util.concurrent.Executors;
 
 public final class DBThreadManager {
 
-    private ExecutorService mThreadExecutor;
-
     private static DBThreadManager sInstance;
+    private ExecutorService mThreadExecutor;
 
     private DBThreadManager() {
         mThreadExecutor = Executors.newSingleThreadExecutor();

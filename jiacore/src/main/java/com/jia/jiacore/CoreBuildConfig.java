@@ -15,7 +15,4 @@ public class CoreBuildConfig {
     public static boolean DEBUG;
 
 
-
-
-
 }

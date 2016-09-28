@@ -50,6 +50,16 @@ public class ContentProviderProxy {
 
     private Context mContext;
 
+    /**
+     * 从URI中获取表名
+     *
+     * @param uri 目标Uri
+     * @return 操作目标的表名
+     */
+    private static String getTableFromUri(final Uri uri) {
+        return uri.getPathSegments().get(0);
+    }
+
     public void setDatabaseName(String databaseName) {
         mDatabaseName = databaseName;
     }
@@ -63,16 +73,6 @@ public class ContentProviderProxy {
      */
     public void setContext(Context context) {
         mContext = context;
-    }
-
-    /**
-     * 从URI中获取表名
-     *
-     * @param uri 目标Uri
-     * @return 操作目标的表名
-     */
-    private static String getTableFromUri(final Uri uri) {
-        return uri.getPathSegments().get(0);
     }
 
     /**

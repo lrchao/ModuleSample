@@ -12,13 +12,13 @@ import com.lrchao.modulesample.ModuleApplication;
 import com.lrchao.modulesample.database.TableFactory;
 
 /**
- * Description: TODO
+ * Description: 缓存表
  *
  * @author lrc19860926@gmail.com
  * @date 16/9/27 下午2:30
  */
 
-public class HttpCacheTable extends DBTableBase{
+public class HttpCacheTable extends DBTableBase {
 
     /**
      * 表名

@@ -7,13 +7,13 @@ import com.jia.jiacore.database.IBaseTableFactory;
 import com.lrchao.modulesample.database.table.HttpCacheTable;
 
 /**
- * Description: TODO
+ * Description: 表工厂,负责初始化表
  *
  * @author lrc19860926@gmail.com
  * @date 16/9/27 下午2:17
  */
 
-public final class TableFactory extends IBaseTableFactory{
+public final class TableFactory extends IBaseTableFactory {
 
     /**
      * 表的URI对应的code和uri

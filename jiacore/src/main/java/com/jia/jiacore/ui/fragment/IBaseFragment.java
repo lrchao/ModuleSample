@@ -32,21 +32,18 @@ public abstract class IBaseFragment extends Fragment {
      * 对应的Fragment Name
      */
     protected final String mTag = this.getClass().getSimpleName();
-
-    /**
-     * FragmentManager
-     */
-    private FragmentManager mFragmentManager;
-
     /**
      * Handler
      */
     protected MainHandler mMainHandler;
-
     /**
      * Fragment的根view
      */
     protected View mMainView;
+    /**
+     * FragmentManager
+     */
+    private FragmentManager mFragmentManager;
 
     //====================================
     // 子类调用

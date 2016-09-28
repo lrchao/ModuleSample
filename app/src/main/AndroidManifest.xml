@@ -19,7 +19,9 @@
 
         <activity android:name=".ui.activity.PageNetworkActivity"/>
 
-        <activity android:name=".ui.CustomerDialogActivity" android:theme="@style/DialogTransparent"/>
+        <activity
+            android:name=".ui.CustomerDialogActivity"
+            android:theme="@style/DialogTransparent"/>
 
         <provider
             android:name=".database.UserContentProvider"

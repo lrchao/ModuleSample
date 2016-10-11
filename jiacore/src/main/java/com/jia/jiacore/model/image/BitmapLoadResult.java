@@ -5,8 +5,13 @@ import android.graphics.Bitmap;
 /**
  * Description: 图片加载为Bitmap结果对象
  *
- * @author liuranchao
+ * @author lrc19860926@gmail.com
  * @date 16/9/1 下午5:53
+ */
+/**
+ * Description: TODO
+ * @author lrc19860926@gmail.com
+ * @date 2016/10/11 下午5:44
  */
 public class BitmapLoadResult {
 

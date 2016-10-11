@@ -2,9 +2,9 @@ package com.jia.jiacore.network;
 
 import com.jia.jiacore.R;
 import com.jia.jiacore.exception.InitializationNotCompleteException;
-import com.jia.jiacore.model.eventbus.ApiEndEventModel;
-import com.jia.jiacore.model.eventbus.ApiResultEventModel;
-import com.jia.jiacore.model.eventbus.ApiStartEventModel;
+import com.jia.jiacore.model.eventbus.event.ApiEndEvent;
+import com.jia.jiacore.model.eventbus.event.ApiResultEvent;
+import com.jia.jiacore.model.eventbus.event.ApiStartEvent;
 import com.jia.jiacore.model.network.JsonModel;
 import com.jia.jiacore.util.EventBusUtils;
 import com.jia.jiacore.util.LogUtils;
@@ -83,7 +83,7 @@ public final class ApiExecutor {
                     }
 
                 } catch (IOException e) {
-                    // 网络链接异常
+                    // 网络链接异常, 超时等
                     mResponse.setFailedMessage(ResourceUtils.getString(R.string.network_failed_connect));
                     LogUtils.wtf(e);
                 } catch (Throwable e) {
@@ -110,21 +110,21 @@ public final class ApiExecutor {
      * post 请求开始
      */
     private void postStart() {
-        EventBusUtils.post(new ApiStartEventModel(mRequest));
+        EventBusUtils.post(new ApiStartEvent(mRequest));
     }
 
     /**
      * post 请求结束
      */
     private void postEnd() {
-        EventBusUtils.post(new ApiEndEventModel(mRequest));
+        EventBusUtils.post(new ApiEndEvent(mRequest));
     }
 
     /**
      * post 请求结果
      */
     private void postResult() {
-        EventBusUtils.post(new ApiResultEventModel(mRequest, mResponse));
+        EventBusUtils.post(new ApiResultEvent(mRequest, mResponse));
     }
 
 

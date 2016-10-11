@@ -1,4 +1,4 @@
-package com.jia.jiacore.model.eventbus;
+package com.jia.jiacore.model.eventbus.event;
 
 import com.jia.jiacore.network.IBaseRequest;
 
@@ -9,8 +9,8 @@ import com.jia.jiacore.network.IBaseRequest;
  * @date 16/9/28 下午3:28
  */
 
-public class ApiEndEventModel {
-    public ApiEndEventModel(IBaseRequest request) {
+public class ApiEndEvent {
+    public ApiEndEvent(IBaseRequest request) {
 
     }
 }

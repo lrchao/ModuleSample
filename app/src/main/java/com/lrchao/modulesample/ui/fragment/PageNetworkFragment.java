@@ -3,7 +3,6 @@ package com.lrchao.modulesample.ui.fragment;
 import android.view.View;
 
 import com.jia.jiacore.mvp.IBasePresenter;
-import com.jia.jiacore.network.IBaseRequest;
 import com.jia.jiacore.ui.fragment.IBaseFragment;
 import com.jia.jiacore.ui.fragment.IBaseMvpFragment;
 import com.jia.jiacore.util.LogUtils;
@@ -63,13 +62,6 @@ public class PageNetworkFragment extends IBaseMvpFragment implements
         }
     }
 
-    public void onSuccess(IBaseRequest request, Object resultObj) {
-
-    }
-
-    public void onFailed() {
-
-    }
 
 
     @Override

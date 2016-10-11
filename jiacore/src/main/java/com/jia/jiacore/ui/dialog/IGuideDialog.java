@@ -6,7 +6,7 @@ import android.view.View;
 /**
  * Description: 引导图的dialog的基类
  *
- * @author liuranchao
+ * @author lrc19860926@gmail.com
  * @date 16/7/15 下午4:46
  */
 public abstract class IGuideDialog extends IBaseDialogFragment {

@@ -1,4 +1,4 @@
-package com.jia.jiacore.model.eventbus;
+package com.jia.jiacore.model.eventbus.event;
 
 import com.jia.jiacore.network.IBaseRequest;
 import com.jia.jiacore.network.IBaseResponse;
@@ -10,13 +10,13 @@ import com.jia.jiacore.network.IBaseResponse;
  * @date 16/9/28 上午11:32
  */
 
-public final class ApiResultEventModel {
+public final class ApiResultEvent {
 
     private IBaseRequest mRequest;
 
     private IBaseResponse mResponse;
 
-    public ApiResultEventModel(IBaseRequest request, IBaseResponse response) {
+    public ApiResultEvent(IBaseRequest request, IBaseResponse response) {
         mRequest = request;
         mResponse = response;
     }

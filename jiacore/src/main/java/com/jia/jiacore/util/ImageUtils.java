@@ -19,7 +19,7 @@ import java.io.File;
  * Description: 图片加载的工具类
  * 使用https://github.com/square/picasso/tree/master/picasso
  *
- * @author liuranchao
+ * @author lrc19860926@gmail.com
  * @date 16/9/1 下午5:16
  */
 public final class ImageUtils {

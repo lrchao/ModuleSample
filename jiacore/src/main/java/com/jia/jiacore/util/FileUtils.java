@@ -13,7 +13,7 @@ import java.io.RandomAccessFile;
 /**
  * Description: 文件操作的工具类
  *
- * @author liuranchao
+ * @author lrc19860926@gmail.com
  * @date 16/3/21 下午4:41
  */
 public final class FileUtils {

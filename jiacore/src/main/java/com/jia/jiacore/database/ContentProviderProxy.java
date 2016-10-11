@@ -268,7 +268,7 @@ public class ContentProviderProxy {
     /**
      * Description: 这个类封装了一个SQL WHERE子句和它的参数
      *
-     * @author liuranchao
+     * @author lrc19860926@gmail.com
      * @date 15/11/11 下午11:17
      */
     private class SqlSelection {
@@ -310,7 +310,7 @@ public class ContentProviderProxy {
     /**
      * Description: 从SQLiteOpenHelper 派生子类处理数据的创建、升级
      *
-     * @author liuranchao
+     * @author lrc19860926@gmail.com
      * @date 15/11/11 下午11:12
      */
     private class DatabaseHelper extends SQLiteOpenHelper {

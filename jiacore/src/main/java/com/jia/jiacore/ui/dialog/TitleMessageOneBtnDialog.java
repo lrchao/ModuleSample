@@ -16,7 +16,7 @@ import com.jia.jiacore.util.ResourceUtils;
  * 3.Title
  * 4.Message
  *
- * @author liuranchao
+ * @author lrc19860926@gmail.com
  * @date 16/9/1 下午1:48
  */
 public class TitleMessageOneBtnDialog extends IBaseDialogFragment implements View.OnClickListener {

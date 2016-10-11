@@ -13,7 +13,7 @@ import com.jia.jiacore.constant.IBaseBundleKey;
  * 1.中间Progress
  * 2.下面文字描述
  *
- * @author liuranchao
+ * @author lrc19860926@gmail.com
  * @date 16/3/21 下午1:39
  */
 public class LoadingDialogFragment extends IBaseDialogFragment {

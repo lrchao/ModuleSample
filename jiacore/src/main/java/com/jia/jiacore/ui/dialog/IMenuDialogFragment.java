@@ -6,7 +6,7 @@ import com.jia.jiacore.R;
 /**
  * Description: Menu Dialog的基类
  *
- * @author liuranchao
+ * @author lrc19860926@gmail.com
  * @date 16/4/26 上午11:10
  */
 public abstract class IMenuDialogFragment extends IBaseDialogFragment {

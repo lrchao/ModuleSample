@@ -19,7 +19,7 @@ import com.jia.jiacore.util.ResourceUtils;
  * 3.右边确认，默认白字、黄色背景、黄色边框、确认
  * 4.白色背景
  *
- * @author liuranchao
+ * @author lrc19860926@gmail.com
  * @date 16/4/11 下午7:31
  */
 public class TitleConfirmCancelDialog extends IBaseDialogFragment implements View.OnClickListener {
